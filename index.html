@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="favicon.ico">
+    <title>Подбор авто</title>
+</head>
+<body>
+  <header class="header">
+    <div class="header__content">
+      <div class="header__logo">
+        <img class="logo-image" src="./image/header-logo.png" alt="logotype">
+      </div>
+      <div class="header__link">
+        <a class="header__link-clients link" href="#main-info">Клиентам</a>
+          <a class="header__link-sign-in link popup-link" href="#">
+            <img class="sign-in-image" src="./image/sign-in-image.png" alt="sign in">
+            <span class="sign-in-text">Войти</span>
+          </a>
+      </div>
+    </div>
+  </header>
+  <section class="header-registration">
+    <div class="header-registration__wrapper wrapper">
+      <div class="header-registration__content">
+        <h1 class="header-registration__content-title">
+          Подбор авто в лизинг по выгодной цене
+        </h1>
+        <p class="header-registration__content-subtitle">
+          IT платформа по быстрому поиску автомобиля от официальных дилеров РФ
+        </p>
+        <button class="header-registration__content-button button-registration">
+          Регистрация
+        </button>
+      </div>
+      <div class="header-registration__image">
+        <img src="./image/header-registration-image.png" alt="car">
+      </div>
+    </div>
+  </section>
+  <main class="main-info" id="main-info">
+      <div class="main-info__wrapper wrapper">
+        <div class="main-info__content">
+            <span class="main-info__content__title">
+              Меньше условий – больше возможностей
+            </span>
+            <div class="main-info__content__advantages">
+                <div class="main-info__content__advantages-item">
+                    <div class="text">
+                    <p class="main-info__content__advantages-item__title">
+                      Экономия времени
+                    </p>
+                    <p class="main-info__content__advantages-item__subtitle">
+                      Дополнительный канал потенциальных клиентов, готовых приобрести автомобиль, без затрат на рекламу и маркетинг.
+                    </p>
+                    </div>
+                    <img src="./image/advantages-item-time.png" alt="picture">
+                </div>
+                <div class="main-info__content__advantages-item">
+                    <div class="text">
+                    <p class="main-info__content__advantages-item__title">
+                      Никаких задержек
+                    </p>
+                    <p class="main-info__content__advantages-item__subtitle">
+                      Вы получаете запросы сразу же после отправки клиентом.
+                    </p>
+                    </div>
+                    <img src="./image/advantages-item-speed.png" alt="picture">
+                </div>
+                <div class="main-info__content__advantages-item">
+                    <div class="text">
+                    <p class="main-info__content__advantages-item__title">
+                      Максимальная информативность
+                    </p>
+                    <p class="main-info__content__advantages-item__subtitle">
+                      В каждой заявке указан регион поиска, марка и модель авто, а так же  индивидуальные запросы клиента.
+                    </p>
+                    </div>
+                    <img src="./image/advantages-item-information.png" alt="picture">
+                </div>
+                <div class="main-info__content__advantages-item">
+                    <div class="text">
+                    <p class="main-info__content__advantages-item__title">
+                      Удобство общения
+                    </p>
+                    <p class="main-info__content__advantages-item__subtitle">
+                      Для каждого запроса у вас открыт чат с клиентом с возможностью отправки документов.
+                    </p>
+                    </div>
+                    <img src="./image/advantages-item-chat.png" alt="picture">
+                </div>
+            </div>
+        </div>
+      </div>
+  </main>
+  <footer class="footer">
+    <div class="footer__wrapper">
+      <div class="footer__content">
+        <div class="footer__content-text">
+          <h2 class="footer__content-text-title">
+            Регистрируйся и получай актуальные запросы на автомобили от заинтерисованных клиентов
+          </h2>
+          <button class="footer__content-button button-registration">
+            Регистрация
+          </button>
+         </div>
+      </div>
+      <img src="./image/footer-cars-image.png" alt="cars">
+    </div>
+  </footer>
+  <div class="popup">
+    <div class="popup__wrapper">
+      <form class="popup__form" action="#" method="POST" name="authorization">
+        <div class="popup__form__button-close popup-close">
+          <input type="image" src="./image/popup-button-close.png">
+        </div>
+        <p class="popup__form__text">Aвторизация</p>
+        <div class="popup__form__container">
+          <label for="email">E-mail</label>
+          <input type="email" placeholder="Введите e-mail" name="email" required>
+          <label for="password">Пароль</label>
+          <input type="password" placeholder="Введите пароль" name="password" required>
+          <div class="popup__form__button-entry">
+            <input type="submit" value="Войти">
+          </div>
+        </div>
+     </form>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

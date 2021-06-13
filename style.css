@@ -1,0 +1,640 @@
+@font-face {
+    font-family: 'Segoe UI Regular';
+    src: url("./fonts/SegoeUI.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'Whitney Book';
+    src: url("./fonts/Whitney-Book.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  
+  body {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    font-family: 'Whitney Book';
+    font-size: 24px;
+    color: black;
+    font-weight: fasle;
+  }
+  
+  .button-registration {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    font-family: 'Whitney Book';
+    font-size: 1.1rem;
+    color: #FFFFFF;
+    font-weight: 600;
+    line-height: 18px;
+    padding: 16px 60px;
+    background: #F25B24;
+    border: 2px solid transparent;
+    border-radius: 4px;
+    text-align: center;
+  }
+  
+  .button-registration:hover, .button-registration:active, .button-registration:focus {
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    border: 2px solid #fff;
+  }
+  
+  .button-registration:active {
+    background: #f3b531;
+  }
+  
+  .button-registration:focus {
+    outline: none;
+  }
+  
+  .header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    width: 100%;
+    background: -webkit-gradient(linear, left top, right top, from(#2D1686), to(#4E33B5));
+    background: linear-gradient(90deg, #2D1686 0%, #4E33B5 100%);
+  }
+  
+  .header__content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    width: 75vw;
+    height: 98px;
+  }
+  
+  .header__logo .logo-image {
+    max-width: 8rem;
+  }
+  
+  .header__link {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    width: 315px;
+  }
+  
+  .header .link {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    font-family: 'Whitney Book';
+    font-size: 1rem;
+    color: #FFFFFF;
+    font-weight: 325;
+    line-height: 23px;
+    text-decoration: none;
+  }
+  
+  .header .link img {
+    padding-right: 10px;
+  }
+  
+  .header .link:hover, .header .link:focus {
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    color: #F25B24;
+    outline: none;
+  }
+  
+  .header-registration {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    background: -webkit-gradient(linear, left top, right top, from(#2D1686), to(#4E33B5));
+    background: linear-gradient(90deg, #2D1686 0%, #4E33B5 100%);
+    padding: 95px 0 55px 0;
+  }
+  
+  .header-registration__wrapper {
+    width: 75vw;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: start;
+  }
+  
+  .header-registration__content {
+    z-index: 1000;
+    width: 75vw;
+  }
+  
+  .header-registration__content-title {
+    width: 500px;
+    padding-bottom: 40px;
+    font-family: 'Whitney Book';
+    font-size: 3rem;
+    color: #FFFFFF;
+    font-weight: 600;
+    line-height: 60px;
+  }
+  
+  .header-registration__content-subtitle {
+    font-family: 'Whitney Book';
+    font-size: 1.5rem;
+    color: #FFFFFF;
+    font-weight: 350;
+    line-height: 30px;
+    width: 500px;
+  }
+  
+  .header-registration__content-button {
+    margin: 60px 0 180px 0;
+  }
+  
+  .header-registration__image {
+    position: relative;
+  }
+  
+  .header-registration__image img {
+    position: absolute;
+    top: -20px;
+    left: -715px;
+    width: 689px;
+    height: 442px;
+  }
+  
+  @media (max-width: 1325px) {
+    .header-registration {
+      padding: 0px 0 55px 0;
+    }
+    .header-registration__wrapper, .header-registration__content {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-direction: normal;
+      -webkit-box-orient: vertical;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+    }
+    .header-registration__content-button {
+      margin: 40px 0 40px 0;
+    }
+    .header-registration__image {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+    }
+    .header-registration__image img {
+      position: initial;
+      width: 500px;
+      height: 300px;
+    }
+  }
+  
+  .main-info {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    width: 100%;
+    padding: 130px 0 130px 0;
+  }
+  
+  .main-info__wrapper {
+    width: 75vw;
+  }
+  
+  .main-info__content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+  
+  .main-info__content__title {
+    font-family: 'Whitney Book';
+    font-size: 2.4rem;
+    color: #2E2D35;
+    font-weight: 600;
+    line-height: 52px;
+  }
+  
+  .main-info__content__advantages {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    margin: 50px 0 0 20px;
+  }
+  
+  .main-info__content__advantages-item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 35vw;
+    margin: 50px 30px 0 0;
+    background: #F6F5F9;
+    border-radius: 6px;
+  }
+  
+  .main-info__content__advantages-item__title {
+    font-family: 'Segoe UI Regular';
+    font-size: 1.3rem;
+    color: #2E2D35;
+    font-weight: 600;
+    line-height: 29px;
+    padding: 43px 70px 22px 40px;
+  }
+  
+  .main-info__content__advantages-item__subtitle {
+    font-family: 'Segoe UI Regular';
+    font-size: 0.9rem;
+    color: #474351;
+    font-weight: 500;
+    line-height: 23px;
+    padding: 0 30px 30px 40px;
+  }
+  
+  .main-info__content__advantages-item img {
+    padding: 21px 10px 21px 20px;
+    max-height: 200px;
+  }
+  
+  @media (max-width: 1599px) {
+    .main-info {
+      padding: 75px 0 95px 0;
+    }
+    .main-info__content__advantages {
+      margin: 50px 0 0 0px;
+    }
+    .main-info__content__advantages-item {
+      width: 35vw;
+      margin: 15px 15px 0 0;
+    }
+    .main-info__content__advantages-item__title {
+      padding: 15px 15px 15px 20px;
+    }
+    .main-info__content__advantages-item__subtitle {
+      padding: 0 30px 15px 20px;
+    }
+    .main-info__content__advantages-item img {
+      padding: 21px 10px 21px 0;
+    }
+  }
+  
+  @media (max-width: 1110px) {
+    .main-info__content__advantages {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-direction: normal;
+      -webkit-box-orient: vertical;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+    }
+    .main-info__content__advantages-item {
+      width: 75vw;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+      justify-content: space-between;
+    }
+  }
+  
+  .footer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .footer__wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    width: 75vw;
+    background: -webkit-gradient(linear, left top, right top, from(#2D1686), to(#4E33B5));
+    background: linear-gradient(90deg, #2D1686 0%, #4E33B5 100%);
+    border-radius: 10px;
+    padding-bottom: 0px;
+    margin-bottom: 185px;
+  }
+  
+  .footer__content {
+    width: 100%;
+    position: relative;
+  }
+  
+  .footer__content-text {
+    position: absolute;
+    padding: 70px 0 0 70px;
+  }
+  
+  .footer__content-text-title {
+    font-family: 'Whitney Book';
+    font-size: 2rem;
+    color: #FFFFFF;
+    font-weight: 600;
+    line-height: 45px;
+    width: 32vw;
+    padding-bottom: 46px;
+  }
+  
+  @media (max-width: 1245px) {
+    .footer__content {
+      position: relative;
+    }
+    .footer__content-text {
+      position: absolute;
+      top: 35px;
+      left: 150px;
+      padding: 35px 0 0 0px;
+    }
+    .footer__content-text-title {
+      font-family: 'Whitney Book';
+      font-size: 1.3rem;
+      color: #FFFFFF;
+      font-weight: 600;
+      line-height: 45px;
+      width: 500px;
+      padding-bottom: 35px;
+    }
+    .footer__content-button {
+      position: absolute;
+      left: 120px;
+    }
+  }
+  
+  @media (max-width: 900px) {
+    .footer {
+      padding-top: 50px;
+    }
+    .footer__content {
+      position: relative;
+    }
+    .footer__content-text {
+      position: absolute;
+      top: -10px;
+      left: 50px;
+    }
+    .footer__wrapper {
+      height: 300px;
+    }
+    .footer__wrapper img {
+      width: 500px;
+    }
+  }
+  
+  @media (max-width: 610px) {
+    .footer__content {
+      position: relative;
+    }
+    .footer__content-text {
+      position: absolute;
+      top: -10px;
+      left: 110px;
+    }
+    .footer__content-text-title {
+      text-align: center;
+      width: 320px;
+      font-family: 'Whitney Book';
+      font-size: 1rem;
+      color: #FFFFFF;
+      font-weight: 500;
+      line-height: 45px;
+    }
+    .footer__content-button {
+      position: absolute;
+      left: 50px;
+    }
+    .footer__wrapper {
+      height: 300px;
+    }
+    .footer__wrapper img {
+      visibility: hidden;
+    }
+  }
+  
+  .popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+    opacity: 0;
+    background: rgba(28, 24, 47, 0.3);
+  }
+  
+  .popup.open {
+    opacity: 1;
+    visibility: visible;
+    z-index: 3000;
+  }
+  
+  .popup.close {
+    visibility: hidden;
+    opacity: 0;
+    z-index: 0;
+  }
+  
+  .popup__wrapper {
+    position: fixed;
+    top: 20%;
+    left: 35%;
+  }
+  
+  .popup__form {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    width: 27vw;
+    min-height: 50vh;
+    background: #FFFFFF;
+    -webkit-box-shadow: 0px 10px 60px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 10px 60px rgba(0, 0, 0, 0.25);
+    border-radius: 6px;
+  }
+  
+  .popup__form__button-close {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    padding: 10px 10px 8px 0;
+  }
+  
+  .popup__form__container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    margin: auto;
+  }
+  
+  .popup__form__container label {
+    font-family: 'Whitney Book';
+    font-size: 1.2rem;
+    color: #474351;
+    font-weight: 600;
+    line-height: 24px;
+  }
+  
+  .popup__form__container input {
+    width: 23vw;
+    height: 50px;
+    background: #FFFFFF;
+    border: 1px solid #DDDAE7;
+    border-radius: 4px;
+    margin: 10px 0 18px 0;
+    padding: 0 0 5px 10px;
+  }
+  
+  .popup__form__container input::-webkit-input-placeholder {
+    font-family: 'Whitney Book';
+    font-size: 1rem;
+    color: #474351;
+    font-weight: 325;
+    line-height: 16px;
+    color: #918D9A;
+  }
+  
+  .popup__form__container input:hover, .popup__form__container input:active, .popup__form__container input:focus {
+    border: 2px solid #4E33B5;
+    outline: #4E33B5;
+  }
+  
+  .popup__form__text {
+    font-family: 'Whitney Book';
+    font-size: 2.5rem;
+    color: #2E2D35;
+    font-weight: 600;
+    line-height: 52px;
+    text-align: center;
+    padding-bottom: 30px;
+  }
+  
+  .popup__form__button-entry input {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin-top: 15px;
+    padding: 16px 60px;
+    background: #F25B24;
+    border-radius: 4px;
+    font-family: 'Whitney Book';
+    font-size: 1rem;
+    color: #FFFFFF;
+    font-weight: 600;
+    line-height: 18px;
+    text-align: center;
+  }
+  
+  .popup__form__button-entry input:hover, .popup__form__button-entry input:active, .popup__form__button-entry input:focus {
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    border: 2px solid #4E33B5;
+  }
+  
+  .popup__form__button-entry input:active {
+    background: #f3b531;
+  }
+  
+  @media (max-width: 1200px) {
+    .popup__form {
+      width: 35vw;
+    }
+  }
+  
+  @media (max-width: 1024px) {
+    .popup__form {
+      width: 40vw;
+    }
+  } 

@@ -1,0 +1,538 @@
+// Fonts
+@font-face {
+  font-family: 'Segoe UI Regular';
+  src: url('./fonts/SegoeUI.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Whitney Book';
+  src: url('./fonts/Whitney-Book.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+// Variables
+$width-block: 75vw;
+$background-gradient: linear-gradient(90deg, #2D1686 0%, #4E33B5 100%);
+$background-advantages: #F6F5F9;
+$basic-color-button: #F25B24;
+$basic-text-color-light: #FFFFFF;
+$basic-text-color-dark: #2E2D35;
+$basic-text-color-medium: #474351;
+$popup-background: #FFFFFF;
+$popup-placeholder-text-color: #918D9A;
+// Mixins
+@mixin flexbox {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+@mixin flex-direction($direction: row) {
+  @if $direction == row-reverse {
+    -webkit-box-direction: reverse;
+    -webkit-box-orient: horizontal;
+    -moz-box-direction: reverse;
+    -moz-box-orient: horizontal;
+  } @else if $direction == column {
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+    -moz-box-direction: normal;
+    -moz-box-orient: vertical;
+  } @else if $direction == column-reverse {
+      -webkit-box-direction: reverse;
+      -webkit-box-orient: vertical;
+      -moz-box-direction: reverse;
+      -moz-box-orient: vertical;
+  } @else {
+      -webkit-box-direction: normal;
+      -webkit-box-orient: horizontal;
+      -moz-box-direction: normal;
+      -moz-box-orient: horizontal;
+  }
+      -webkit-flex-direction: $direction;
+      -ms-flex-direction: $direction;
+      flex-direction: $direction;
+}
+@mixin justify-content($value: flex-start) {
+  @if $value == flex-start {
+    -webkit-box-pack: start;
+    -moz-box-pack: start;
+    -ms-flex-pack: start;
+  } @else if $value == flex-end {
+      -webkit-box-pack: end;
+      -moz-box-pack: end;
+      -ms-flex-pack: end;
+  } @else if $value == space-between {
+      -webkit-box-pack: justify;
+      -moz-box-pack: justify;
+      -ms-flex-pack: justify;
+  } @else if $value == space-around {
+      -ms-flex-pack: distribute;
+  } @else {
+      -webkit-box-pack: $value;
+      -moz-box-pack: $value;
+      -ms-flex-pack: $value;
+  }    
+      -webkit-justify-content: $value;
+      justify-content: $value;
+}
+@mixin align-items($value: stretch) {
+  @if $value == flex-start {
+    -webkit-box-align: start;
+      -moz-box-align: start;
+      -ms-flex-align: start;
+  } @else if $value == flex-end {
+      -webkit-box-align: end;
+      -moz-box-align: end;
+      -ms-flex-align: end;
+  } @else {
+      -webkit-box-align: $value;
+      -moz-box-align: $value;
+      -ms-flex-align: $value;
+  }
+      -webkit-align-items: $value;
+      align-items: $value;
+}
+@mixin position($position, $top: null, $right: null, $bottom: null, $left: null) {
+  position: $position;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+@mixin transform($value){
+  -webkit-transform: scale($value);
+  -moz-transform: scale($value);
+  -o-transform: scale($value);
+}
+@mixin font-source-sans($font-family:false ,$size: false, $colour: false, $weight: false,  $lh: false) {
+    @if $font-family == 'Whitney Book'{
+        font-family: 'Whitney Book'; 
+    } @else if $font-family == 'Segoe UI Regular' {
+        font-family: 'Segoe UI Regular';
+    } 
+    @if $size { font-size: $size; }
+    @if $colour { color: $colour; }
+    @if $weight { font-weight: $weight; }
+    @if $lh { line-height: $lh; }
+}
+// Оther properties 
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+body {
+  @include flexbox;
+  @include justify-content(center);
+  @include flex-direction(column);
+  @include font-source-sans('Whitney Book', 24px, black, fasle, false);
+}
+.button-registration {
+  @include flexbox;
+  @include justify-content(center);
+  @include align-items(center);
+  @include font-source-sans('Whitney Book', 1.10rem, $basic-text-color-light, 600, 18px);
+  padding: 16px 60px;
+  background: $basic-color-button;
+  border: 2px solid transparent;
+  border-radius: 4px;
+  text-align: center;
+  &:hover,
+  &:active,
+  &:focus
+   {
+    @include transform(1.1);
+    border: 2px solid #fff;
+  }
+  &:active {
+    background: #f3b531;
+  }
+  &:focus {
+    outline: none;
+  }
+}
+// Header
+.header {
+  @include flexbox;
+  @include justify-content(center);
+  width: 100%;
+  background: $background-gradient;
+  &__content {
+    @include flexbox;
+    @include justify-content(space-between);
+    @include align-items(center);
+    width: $width-block;
+    height:98px;
+  }
+  &__logo {
+    .logo-image{
+    max-width: 8rem;
+    }
+  }
+  &__link {
+    @include flexbox;
+    @include justify-content(space-around);
+    @include align-items(center);
+    width: 315px;
+  }
+  & .link {
+    @include flexbox;
+    @include align-items(center);
+    @include font-source-sans('Whitney Book', 1rem, $basic-text-color-light, 325, 23px);
+    text-decoration: none;
+    & img {
+      padding-right: 10px;
+    }
+    &:hover, 
+    &:focus {
+      @include transform(1.2);
+      color: $basic-color-button;
+      outline: none;
+    }
+  }
+}
+// Header Registration
+.header-registration {
+  @include flexbox;
+  @include justify-content(center);
+  background: $background-gradient;
+  padding: 95px 0 55px 0;
+  &__wrapper {
+    width: $width-block;
+    @include flexbox;
+    @include justify-content(start);
+  }
+  &__content {
+    z-index: 1000;
+    width: $width-block;
+    &-title {
+      width: 500px;
+    @include font-source-sans('Whitney Book', 3rem, $basic-text-color-light, 600, 60px);
+    }
+    &-subtitle {
+      @include font-source-sans('Whitney Book', 1.5rem, $basic-text-color-light, 350, 30px);
+      width: 500px;
+    }
+    &-button {
+      margin: 60px 0 180px 0;
+    }
+  }
+  &__image {
+    @include position(relative);
+    img {
+    @include position(absolute, $top: -20px, $left: -715px);
+    width: 689px;
+    height: 442px;
+    }
+  }
+}
+// Header Registration Media
+@media (max-width: 1325px) {
+  .header-registration {
+    padding: 0px 0 55px 0;
+    &__wrapper,
+    &__content {
+      @include flexbox;
+      @include flex-direction(column);
+      @include align-items(center);
+    }
+    &__content {
+      &-button {
+        margin: 40px 0 40px 0;
+      }
+    }
+    &__image {
+      @include flexbox;
+      img {
+        position: initial;
+        width: 500px;
+        height: 300px;
+      }
+    }
+  }
+}
+// Main
+.main-info {
+  @include flexbox;
+  @include justify-content(center);
+  width: 100%;
+  padding: 130px 0 130px 0;
+  &__wrapper {
+    width: $width-block;
+  }
+  &__content {
+    @include flexbox;
+    @include flex-direction(column);
+    &__title {
+      @include font-source-sans('Whitney Book', 2.4rem, $basic-text-color-dark, 600, 52px);
+    } 
+    &__advantages {
+      @include flexbox;
+      @include justify-content(center);
+      flex-wrap: wrap;
+      margin: 50px 0 0 20px;
+      &-item {
+        @include flexbox;
+        width: 35vw;
+        margin: 50px 30px 0 0;
+        background: $background-advantages;
+        border-radius: 6px;
+        &__title {
+          @include font-source-sans('Segoe UI Regular', 1.3rem, $basic-text-color-dark, 600, 29px);
+          padding: 43px 70px 22px 40px;
+        }
+        &__subtitle {
+          @include font-source-sans('Segoe UI Regular', 0.9rem, $basic-text-color-medium, 500, 23px);
+          padding: 0 30px 30px 40px;
+        }
+        img {
+          padding: 21px 10px 21px 20px;
+          max-height: 200px;
+        }
+      }
+    } 
+  }
+}
+// Main Media
+@media (max-width: 1599px) {
+  .main-info {
+    padding: 75px 0 95px 0;
+    &__content {
+      &__advantages {
+        margin: 50px 0 0 0px;
+        &-item {
+          width: 35vw;
+          margin: 15px 15px 0 0;
+          &__title {
+            padding: 15px 15px 15px 20px;
+          }
+          &__subtitle {
+            padding: 0 30px 15px 20px;
+          }
+          img {
+            padding: 21px 10px 21px 0;
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 1110px) {
+  .main-info {
+    &__content {
+      &__advantages {
+        @include flexbox;
+        @include flex-direction(column);
+        @include align-items(center);
+        &-item {
+          width: $width-block;
+          @include flexbox;
+          @include justify-content(space-between);
+        }
+      }
+    }
+  } 
+}
+// Footer
+.footer {
+  @include flexbox;
+  @include justify-content(center);
+  width: 100%;
+  &__wrapper {
+    @include flexbox;
+    @include justify-content(flex-end);
+    width: $width-block;
+    background: $background-gradient;
+    border-radius: 10px;
+    padding-bottom: 0px;
+    margin-bottom: 185px;
+  }
+  &__content {
+    width: 100%;
+    @include position(relative);
+    &-text { 
+      @include position(absolute);
+      padding: 70px 0 0 70px;
+      &-title {
+        @include font-source-sans('Whitney Book', 2rem, $basic-text-color-light, 600, 45px);
+        width: 32vw;
+        padding-bottom: 46px;
+      }
+    }
+  }
+}
+// Footer Media
+@media (max-width: 1245px) {
+  .footer {
+    &__content {
+      @include position(relative);
+      &-text { 
+        @include position(absolute, $top: 35px, $left: 150px);
+        padding: 35px 0 0 0px;
+        &-title {
+          @include font-source-sans('Whitney Book', 1.3rem, $basic-text-color-light, 600, 45px);
+          width: 500px;
+          padding-bottom: 35px;
+        }
+      }
+      &-button {
+        position: absolute;
+        left: 120px;
+      }
+    }
+  }    
+}
+@media (max-width: 900px) {
+  .footer {
+    padding-top: 50px;
+    &__content {
+      @include position(relative);
+      &-text { 
+        @include position(absolute, $top: -10px, $left: 50px);
+      }
+    }
+    &__wrapper {
+      height: 300px;
+      img {
+        width: 500px;
+      }
+    }  
+  }
+} 
+@media (max-width: 610px) {
+  .footer {
+     &__content {
+       @include position(relative);
+       &-text {
+         @include position(absolute, $top: -10px, $left: 110px);
+         &-title {
+           text-align: center;
+           width:  320px; 
+           @include font-source-sans('Whitney Book', 1rem, $basic-text-color-light, 500, 45px); 
+         }
+       }
+       &-button {
+         @include position(absolute, $left: 50px);
+       }
+     }
+     &__wrapper {
+       height: 300px;
+       img {
+         visibility: hidden;
+       }
+     }  
+   } 
+}
+// Popup 
+.popup {
+  @include position(fixed,$top:0, $left:0);
+  width: 100%;
+  height: 100%;
+  visibility: hidden;
+  opacity: 0;
+  background: rgba(28, 24, 47, 0.3);
+  &.open {
+    opacity: 1;
+    visibility: visible;
+    z-index: 3000;
+  }
+  &.close {
+    visibility: hidden;
+    opacity: 0;
+    z-index: 0;
+  }
+  &__wrapper {
+    @include position(fixed,$top:20%, $left:35%);
+  }
+  &__form {
+    @include flexbox;
+    @include flex-direction(column);
+    width: 27vw;
+    min-height: 50vh;
+    background: $popup-background;
+    -webkit-box-shadow: 0px 10px 60px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 10px 60px rgba(0, 0, 0, 0.25);
+    border-radius: 6px;
+    &__button-close{
+      @include flexbox;
+      @include justify-content(flex-end);
+      padding: 10px 10px 8px 0;
+    }
+    &__container {
+      @include flexbox;
+      @include flex-direction(column);
+      @include align-items(flex-start);
+      margin: auto;
+      label {
+        @include font-source-sans('Whitney Book', 1.2rem, $basic-text-color-medium, 600, 24px);
+      }
+      input {
+        width: 23vw;
+        height: 50px;
+        background: $popup-background;
+        border: 1px solid #DDDAE7;
+        border-radius: 4px;
+        margin: 10px 0 18px 0;
+        padding: 0 0 5px 10px;
+        &::-webkit-input-placeholder {
+          @include font-source-sans('Whitney Book', 1rem, $basic-text-color-medium, 325, 16px);
+          color: $popup-placeholder-text-color;
+        }
+        &:hover,
+        &:active,
+        &:focus {
+          border: 2px solid #4E33B5;
+          outline: #4E33B5;
+        }
+      }
+    }
+    &__text {
+      @include font-source-sans('Whitney Book', 2.5rem, $basic-text-color-dark, 600, 52px);
+      text-align: center;
+      padding-bottom: 30px;
+    }
+    &__button-entry {
+      input{
+        @include flexbox;
+        @include flex-direction(column);
+        @include justify-content(center);
+        @include align-items(center);
+        margin-top: 15px;
+        padding: 16px 60px;
+        background: $basic-color-button;
+        border-radius: 4px;
+        @include font-source-sans('Whitney Book', 1rem, $basic-text-color-light, 600, 18px);
+        text-align: center;
+        &:hover,
+        &:active,
+        &:focus
+         {
+          @include transform(1.1);
+          border: 2px solid #4E33B5;
+        }
+        &:active {
+          background: #f3b531;
+        }
+      }
+    }
+  }
+}
+// Popup Media 
+@media (max-width: 1200px) {
+  .popup {
+    &__form {
+      width: 35vw;
+    }
+  }
+}
+@media (max-width: 1024px) {
+  .popup {
+    &__form {
+      width: 40vw;
+    }
+  }
+}
